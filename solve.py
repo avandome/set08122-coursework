@@ -1,13 +1,8 @@
-import test1
+import create
 
-board = test1.create_board()
+board = create.create_board()
 
-#num_to_remove = 30
-#test1.remove_numbers(board, num_to_remove)
 
-#undo_board = [row[:] for row in board]
-
-#test1.print_board(board)
 
 
 def welcome_page():
@@ -48,7 +43,7 @@ def welcome_page():
         else:
             print("Invalid input, try again")
             continue
-    test1.remove_numbers(board, num_to_remove)
+    create.remove_numbers(board, num_to_remove)
 
 def play_game():
     
@@ -82,7 +77,7 @@ def play_game():
         board[row][col] = num
     
         # Print the updated board
-        test1.print_board(board)
+        create.print_board(board)
 
 
         board_full = True
@@ -98,7 +93,7 @@ def play_game():
 
         # If the board is full, check if it's valid and print the end message
         if board_full:
-            if test1.is_valid(board, num, row, col):
+            if create.is_valid(board, num, row, col):
                 print("Congratulations! You have solved the puzzle!")
             else:
                 print("Sorry, the board is not valid.")
@@ -106,5 +101,5 @@ def play_game():
 
 
 welcome_page()
-test1.print_board(board)
+create.print_board(board)
 play_game()
